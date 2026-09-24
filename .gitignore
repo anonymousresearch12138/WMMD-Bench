@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+outputs/
+assets/
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.npy
+*.npz

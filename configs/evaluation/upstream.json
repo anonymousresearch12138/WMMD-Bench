@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "root_variable": "WMMD_UPSTREAM_ROOT",
+  "validation_imports_upstream": false,
+  "methods": {
+    "evertracer": {
+      "repository": "https://github.com/Xuzhenhua55/EverTracer",
+      "revision": "70b402f7b7456c6d94e1fae2de554d77dd6cd921",
+      "observed_license": "No explicit redistribution grant found at inspected revision; external checkout is user supplied under applicable rights",
+      "required_files": {
+        "Fingerprinting/attack/attack_model.py": "fd7d213a35940fa172582e3ffeb40ace8f15f5bad16da24ca6a02a4a0dcfca16"
+      },
+      "importable_files": [
+        "Fingerprinting/attack/attack_model.py"
+      ],
+      "import_paths": [
+        ".",
+        "Fingerprinting"
+      ],
+      "runtime_dependency_for_detector": false,
+      "benchmark_adapter": "wmmd_bench/methods/evertracer/evaluate.py"
+    },
+    "ctcc": {
+      "repository": "https://github.com/Xuzhenhua55/CTCC",
+      "revision": "8db93218260bed31b8f18acc9c6ac3e1955d3a42",
+      "observed_license": "No explicit redistribution grant found at inspected revision; external checkout is user supplied under applicable rights",
+      "required_files": {},
+      "importable_files": [],
+      "import_paths": [
+        "."
+      ],
+      "runtime_dependency_for_detector": false,
+      "benchmark_adapter": "wmmd_bench/methods/ctcc/evaluate.py"
+    },
+    "llmprint": {
+      "repository": "https://github.com/hifi-hyp/ACL-LLMPrint",
+      "revision": "3e577f98b2bb64780ec2995b074c5aeec9b017e1",
+      "observed_license": "No explicit redistribution grant found at inspected revision; external checkout is user supplied under applicable rights",
+      "required_files": {
+        "create_adv_prompt.py": "5afbc292047f7a2d481bdc38c66b1f52ed519946eebc7120a0060a6cbd509e50",
+        "detect_func.py": "39da0aa3da33231a04f3af87048ec9c3db00368b56b757cd3205b410b920feb1"
+      },
+      "importable_files": [
+        "detect_func.py",
+        "create_adv_prompt.py"
+      ],
+      "import_paths": [
+        "."
+      ],
+      "runtime_dependency_for_detector": true,
+      "benchmark_adapter": "wmmd_bench/methods/llmprint/evaluate.py"
+    },
+    "huref": {
+      "repository": "https://github.com/LUMIA-Group/HuRef",
+      "revision": "9c34548a6f6c1e78780e1fd07de56c7a3357f6ef",
+      "observed_license": "No explicit redistribution grant found at inspected revision; external checkout is user supplied under applicable rights",
+      "required_files": {
+        "Invariant_terms_Cos_Sim.py": "2bfee2681104ce01a7902b8e7163fa6142f6ffc73d329017fd8c3197d58ff100",
+        "main.py": "d744320f0bf8a73bef1ac8337c4dbaa15a11406967b1ed82e2e909f18cc261ad"
+      },
+      "importable_files": [
+        "Invariant_terms_Cos_Sim.py",
+        "main.py"
+      ],
+      "import_paths": [
+        "."
+      ],
+      "runtime_dependency_for_detector": true,
+      "function_exports": {
+        "main.py": [
+          "mean_pooling"
+        ],
+        "Invariant_terms_Cos_Sim.py": [
+          "stand_normalize2d"
+        ]
+      },
+      "benchmark_adapter": "wmmd_bench/methods/huref/evaluate.py"
+    },
+    "awm": {
+      "repository": "https://github.com/LUMIA-Group/AWM",
+      "revision": "bc20ff8e63cec57f5da422ae065686ced275e76d",
+      "observed_license": "No explicit redistribution grant found at inspected revision; external checkout is user supplied under applicable rights",
+      "required_files": {
+        "configs.py": "93b63c8c345338eb175aadc2a251aacbde956f1dbeedd184f253319fe0d44668",
+        "similarity_metrics.py": "908f463ac6bb68b78a36d4adc4847548eb13b0554e92d3edc2f45fc5e80a73d7"
+      },
+      "importable_files": [
+        "similarity_metrics.py"
+      ],
+      "import_paths": [
+        "."
+      ],
+      "runtime_dependency_for_detector": true,
+      "benchmark_adapter": "wmmd_bench/methods/awm/evaluate.py"
+    }
+  }
+}

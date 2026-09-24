@@ -1,0 +1,3 @@
+# Exact versions already recorded for the existing paper-rendering inputs.
+numpy==1.26.4
+matplotlib==3.9.1

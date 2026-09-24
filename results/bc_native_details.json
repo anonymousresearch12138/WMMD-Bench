@@ -1,0 +1,137 @@
+[
+  [
+    "EverTracer",
+    "member oriented auc",
+    "0.59"
+  ],
+  [
+    "EverTracer",
+    "member oriented tpr at fpr limit",
+    "0.16"
+  ],
+  [
+    "EverTracer",
+    "member oriented fpr",
+    "0.05"
+  ],
+  [
+    "EverTracer",
+    "member oriented threshold",
+    "-0.001890856020991323"
+  ],
+  [
+    "EverTracer",
+    "member count",
+    "100"
+  ],
+  [
+    "EverTracer",
+    "nonmember count",
+    "100"
+  ],
+  [
+    "CTCC",
+    "trigger activations",
+    "0"
+  ],
+  [
+    "CTCC",
+    "trigger total",
+    "95"
+  ],
+  [
+    "CTCC",
+    "suppression activations",
+    "0"
+  ],
+  [
+    "CTCC",
+    "suppression total",
+    "100"
+  ],
+  [
+    "CTCC",
+    "normal activations",
+    "0"
+  ],
+  [
+    "CTCC",
+    "normal total",
+    "105"
+  ],
+  [
+    "CTCC",
+    "combined negative activations",
+    "0"
+  ],
+  [
+    "CTCC",
+    "combined negative total",
+    "205"
+  ],
+  [
+    "iSeal",
+    "registered success",
+    "0"
+  ],
+  [
+    "iSeal",
+    "registered total",
+    "200"
+  ],
+  [
+    "iSeal",
+    "registered success rate",
+    "0.0"
+  ],
+  [
+    "iSeal",
+    "registered mean bleu",
+    "2.543812221050849"
+  ],
+  [
+    "iSeal",
+    "registered median bleu",
+    "2.264080875533373"
+  ],
+  [
+    "iSeal",
+    "held out success",
+    "0"
+  ],
+  [
+    "iSeal",
+    "held out total",
+    "100"
+  ],
+  [
+    "iSeal",
+    "held out success rate",
+    "0.0"
+  ],
+  [
+    "iSeal",
+    "held out mean bleu",
+    "2.6634217938107203"
+  ],
+  [
+    "iSeal",
+    "held out median bleu",
+    "2.468145622444567"
+  ],
+  [
+    "SCW",
+    "p value",
+    "0.8819239735603333"
+  ],
+  [
+    "SCW",
+    "fingerprinted",
+    "no"
+  ],
+  [
+    "SCW",
+    "query count",
+    "1000"
+  ]
+]

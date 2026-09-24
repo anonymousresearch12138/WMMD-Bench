@@ -1,0 +1,6 @@
+# Recorded training stack, not a complete lock file.
+torch==2.8.0
+transformers==4.44.2
+bitsandbytes==0.50.0
+# AWM detector used a separate transformers==4.51.3 runtime.
+deepspeed==0.16.9

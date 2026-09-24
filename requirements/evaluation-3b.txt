@@ -1,0 +1,2 @@
+# Recorded active-3B evaluation harness; use with the matched core environment.
+lm-eval==0.4.9.1

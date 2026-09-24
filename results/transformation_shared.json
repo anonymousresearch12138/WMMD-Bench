@@ -1,0 +1,10 @@
+{
+  "method": "Passive shared",
+  "records": 20000,
+  "processing_modes": {
+    "qwen_paraphrased": 13061,
+    "atomic_identity_preserved": 4635,
+    "qwen_identity_output": 2256,
+    "pipeline_identity_fallback": 48
+  }
+}

@@ -1,0 +1,102 @@
+project: WMMD-Bench
+method: iSeal
+experiment: A6
+seed: 42
+official_source:
+  repository: https://github.com/IntelliSys-Lab/iSeal.git
+  commit: 7e382321eef4355002acd93120d888dc9b45a8bd
+model:
+  id: meta-llama/Llama-3.2-3B-Instruct
+  revision: 0cb88a4f764b7a12671c53f0838cd831a0843b95
+  path: ${WMMD_BASE_3B}
+dataset:
+  id: ag_news
+  split: train
+  shuffle_seed: 42
+  registered_count: 200
+  registered_index_ranges:
+  - - 0
+    - 10
+  - - 110
+    - 300
+  historical_registered_count: 100
+  historical_registered_index_ranges:
+  - - 0
+    - 10
+  - - 110
+    - 200
+  historical_registered_10_range:
+  - 0
+  - 10
+  added_registered_count: 100
+  added_registered_index_range:
+  - 200
+  - 300
+  held_out_count: 100
+  held_out_index_range:
+  - 10
+  - 110
+  overlap_policy: strict_zero
+  fixed_manifest_sha256: a68fff13eb0add1f64634e50235a232c3f00fcdcf5d543db942e40a5f3b7bbe9
+scientific_modification:
+  type: training_coverage_ablation
+  relative_to: A5
+  sole_change: registered_plaintext_count_100_to_200
+  adapter_inner_dim_unchanged_128: true
+  freeze_tied_input_embedding_lm_head: true
+training:
+  epochs: 15
+  learning_rate: 0.001
+  per_device_batch_size: 2
+  max_sequence_length: 128
+  precision: bf16
+  optimizer: AdamW
+  weight_decay: 0.01
+  adam_epsilon: 1.0e-08
+  warmup_ratio: 0.1
+  scheduler: linear
+  max_grad_norm: 0.5
+  cipher_layers: 2
+  adapter_inner_dim: 128
+  secret_key_source: ISEAL_SECRET_KEY_HEX_environment_outside_git
+  secret_key_sha256: 8399db2b1e89eb03da1a1a6a4f9cd66d541f36c3695bd899e06613e06d75ffcf
+  secret_key_provenance: reused_from_A2_A3_A4_A5_canonical_runtime_key
+  initialization_repair:
+    scope: adapter_initialization_only
+    delta:
+      method: normal
+      mean: 0.0
+      std: 0.02
+      scale_provenance: Llama_config_initializer_range
+    A:
+      method: pytorch_linear_reset_parameters_default_equivalent
+      distribution: kaiming_uniform
+      a: sqrt_5
+      fan_in: 3072
+      weight_bound: 0.018042195912175808
+    B:
+      method: exact_zero
+    seed: 42
+  trainable_semantics:
+    base_transformer: frozen
+    tied_input_embedding_lm_head: frozen
+    adapter_delta_A_B: trainable
+evaluation:
+  detector:
+    metric: sacrebleu_sentence_bleu
+    tokenization: sacrebleu_13a
+    direction: higher_is_more_similar_and_more_member_like
+    threshold: 50.0
+    threshold_policy: reused_exactly_from_A2_A3_A4_A5
+  registered_count: 200
+  held_out_count: 100
+  generation:
+    do_sample: false
+    max_new_tokens: 128
+  utility:
+    tasks:
+    - arc_challenge
+    - truthfulqa_mc2
+    - ordinary_generation
+    batch_size: 8
+  fresh_reload_required: true

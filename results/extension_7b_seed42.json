@@ -1,0 +1,116 @@
+{
+  "scope": "representative active/passive 7B same-backbone scale extension",
+  "rows": [
+    {
+      "method": "PN-FP",
+      "condition": "Teacher",
+      "hits": 804,
+      "total": 1024,
+      "recall": 0.78515625,
+      "retention": 1.0,
+      "score": null,
+      "threshold": null,
+      "detected": null,
+      "arc": 0.4206484641638225,
+      "truthfulqa": 0.44199761508116137
+    },
+    {
+      "method": "PN-FP",
+      "condition": "Direct",
+      "hits": 53,
+      "total": 1024,
+      "recall": 0.0517578125,
+      "retention": 0.06592039800995025,
+      "score": null,
+      "threshold": null,
+      "detected": null,
+      "arc": 0.4684300341296928,
+      "truthfulqa": 0.4240413977812835
+    },
+    {
+      "method": "PN-FP",
+      "condition": "Paraphrase",
+      "hits": 71,
+      "total": 1024,
+      "recall": 0.0693359375,
+      "retention": 0.08830845771144279,
+      "score": null,
+      "threshold": null,
+      "detected": null,
+      "arc": 0.48464163822525597,
+      "truthfulqa": 0.43801799874931996
+    },
+    {
+      "method": "PN-FP",
+      "condition": "Logit",
+      "hits": 144,
+      "total": 1024,
+      "recall": 0.140625,
+      "retention": 0.1791044776119403,
+      "score": null,
+      "threshold": null,
+      "detected": null,
+      "arc": 0.4462457337883959,
+      "truthfulqa": 0.42416776003683065
+    },
+    {
+      "method": "AWM",
+      "condition": "Reference",
+      "hits": null,
+      "total": null,
+      "recall": null,
+      "retention": null,
+      "score": 1.0,
+      "threshold": 0.007566815861277831,
+      "detected": true,
+      "arc": 0.3660409556313993,
+      "truthfulqa": 0.45754715790333667
+    },
+    {
+      "method": "AWM",
+      "condition": "Direct",
+      "hits": null,
+      "total": null,
+      "recall": null,
+      "retention": null,
+      "score": 0.9999952428042889,
+      "threshold": 0.007566815861277831,
+      "detected": true,
+      "arc": 0.4684300341296928,
+      "truthfulqa": 0.4295359888279958
+    },
+    {
+      "method": "AWM",
+      "condition": "Paraphrase",
+      "hits": null,
+      "total": null,
+      "recall": null,
+      "retention": null,
+      "score": 0.9999933559447527,
+      "threshold": 0.007566815861277831,
+      "detected": true,
+      "arc": 0.4778156996587031,
+      "truthfulqa": 0.43869721529079625
+    },
+    {
+      "method": "AWM",
+      "condition": "Logit",
+      "hits": null,
+      "total": null,
+      "recall": null,
+      "retention": null,
+      "score": 0.999995737336576,
+      "threshold": 0.007566815861277831,
+      "detected": true,
+      "arc": 0.44112627986348124,
+      "truthfulqa": 0.4263976584873499
+    }
+  ],
+  "source_sha256": "b87d9a62d131a1e89a761a23a0c7fad66ce4134d4eed9abf6dca3c26df70bca6",
+  "limitations": [
+    "Representative PN-FP/AWM same-backbone extension only.",
+    "LLMPrint paused at 58/200; not a completed 7B result.",
+    "7B cross-lineage was not run.",
+    "Single seed; native metrics are method-specific."
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "status": "Research reference implementation; route-specific dependencies below",
+  "conditions": {
+    "Ba": {
+      "description": "Same-lineage direct hard-label distillation",
+      "worker": "python scripts/train.py --condition Ba",
+      "target": "teacher_raw_answer"
+    },
+    "Bb": {
+      "description": "Same-lineage transformed-response hard-label distillation",
+      "worker": "python scripts/train.py --condition Bb",
+      "target": "paraphrased_answer adapted to teacher_raw_answer"
+    },
+    "Bc": {
+      "description": "Same-lineage online soft-logit distillation",
+      "worker": "python scripts/train.py --condition Bc",
+      "objective": "0.5 CE + 0.5 T^2 KL(teacher || student), T=2"
+    },
+    "XBa": {
+      "description": "Cross-lineage direct hard-label distillation",
+      "worker": "python scripts/train.py --condition XBa",
+      "target": "teacher_raw_answer"
+    },
+    "XBb": {
+      "description": "Cross-lineage transformed-response hard-label distillation",
+      "worker": "python scripts/train.py --condition XBb",
+      "target": "paraphrased_answer"
+    }
+  },
+  "methods": [
+    {
+      "key": "pnfp",
+      "name": "PN-FP",
+      "family": "active",
+      "detector_worker": "python scripts/evaluate.py pnfp",
+      "detector_semantics": "Frozen 1024-key exact response match; preserve response length and chat-template flags.",
+      "cross_lineage": "Canonical frozen string signatures; Qwen must not regenerate or truncate secrets.",
+      "readiness": "Implementation provided; frozen assets and scientific environment required",
+      "guide": "docs/methods.md",
+      "utility_worker": "python scripts/evaluate.py utility",
+      "detector_scope": "native_implementation"
+    },
+    {
+      "key": "evertracer",
+      "name": "EverTracer",
+      "family": "active",
+      "detector_worker": "python scripts/evaluate.py evertracer",
+      "detector_semantics": "Member-oriented AUC and TPR at empirical FPR <= .05; retain 100 member and 100 nonmember neighborhoods.",
+      "cross_lineage": "Canonical cross-tokenizer detector is N/A; separate exploratory AUC is not a canonical ownership result.",
+      "readiness": "Benchmark adapter provided; frozen assets, documented upstream components and scientific environment required",
+      "guide": "docs/methods.md",
+      "utility_worker": "python scripts/evaluate.py utility",
+      "detector_scope": "benchmark_adapter"
+    },
+    {
+      "key": "ctcc",
+      "name": "CTCC",
+      "family": "active",
+      "detector_worker": "python scripts/evaluate.py ctcc",
+      "detector_semantics": "Operational strip()==IAMALIVE; 95 trigger, 100 suppression and 105 normal queries. Not an official released detector.",
+      "cross_lineage": "Frozen response rule is operationally applicable across lineages.",
+      "readiness": "Benchmark adapter provided; frozen assets, documented upstream components and scientific environment required",
+      "guide": "docs/methods.md",
+      "utility_worker": "python scripts/evaluate.py utility",
+      "detector_scope": "benchmark_adapter"
+    },
+    {
+      "key": "iseal",
+      "name": "iSeal",
+      "family": "active",
+      "detector_worker": "python scripts/evaluate.py iseal",
+      "detector_semantics": "Registered 200 and held-out 100 secrets; sentence BLEU >=50; selected Teacher uses A6 configuration.",
+      "cross_lineage": "Level-3 canonical ownership claim is N/A; retain applicability limits.",
+      "readiness": "Implementation provided; frozen assets and scientific environment required",
+      "guide": "docs/methods.md",
+      "utility_worker": "python scripts/evaluate.py utility",
+      "detector_scope": "native_implementation"
+    },
+    {
+      "key": "scw",
+      "name": "SCW",
+      "family": "active",
+      "detector_worker": "python scripts/evaluate.py scw",
+      "detector_semantics": "Native statistical detector on frozen French queries and generations; retain p-value and decision rule.",
+      "cross_lineage": "Preserve tokenizer/alignment applicability audit and clean Qwen control.",
+      "readiness": "Implementation provided; frozen assets and scientific environment required",
+      "guide": "docs/methods.md",
+      "utility_worker": "python scripts/evaluate.py utility",
+      "detector_scope": "native_implementation"
+    },
+    {
+      "key": "llmprint",
+      "name": "LLMPrint",
+      "family": "passive",
+      "detector_worker": "python scripts/evaluate.py llmprint",
+      "detector_semantics": "Frozen 200-fingerprint probability sequence; paper bit rule and release supplementary rule remain distinct.",
+      "cross_lineage": "Use the explicitly audited cross-lineage representation; do not infer applicability from same-lineage code.",
+      "readiness": "Benchmark adapter provided; frozen assets, documented upstream components and scientific environment required",
+      "guide": "docs/methods.md",
+      "utility_worker": "python scripts/evaluate.py utility",
+      "detector_scope": "benchmark_adapter"
+    },
+    {
+      "key": "reef",
+      "name": "REEF",
+      "family": "passive",
+      "detector_worker": "python scripts/evaluate.py reef",
+      "detector_semantics": "Centered linear CKA of frozen last-token decoder-block representations; retain reference/probe hashes.",
+      "cross_lineage": "Same-lineage evaluator asserts layer/shape identity; cross-lineage needs the audited distinct adapter.",
+      "readiness": "Implementation provided; frozen assets and scientific environment required",
+      "guide": "docs/methods.md",
+      "utility_worker": "python scripts/evaluate.py utility",
+      "detector_scope": "native_implementation"
+    },
+    {
+      "key": "huref",
+      "name": "HuRef",
+      "family": "passive",
+      "detector_worker": "python scripts/evaluate.py huref",
+      "detector_semantics": "Frozen HuRef feature extraction and ICS comparison; original feature/calibration assets required.",
+      "cross_lineage": "Preserve architecture applicability and the original feature mapping.",
+      "readiness": "Benchmark adapter provided; frozen assets, documented upstream components and scientific environment required",
+      "guide": "docs/methods.md",
+      "utility_worker": "python scripts/evaluate.py utility",
+      "detector_scope": "benchmark_adapter"
+    },
+    {
+      "key": "awm",
+      "name": "AWM",
+      "family": "passive",
+      "detector_worker": "python scripts/evaluate.py awm",
+      "detector_semantics": "Native weight-space extraction, dimension/layer alignment, LAP and unbiased CKA; frozen calibration.",
+      "cross_lineage": "Use the canonical alignment implementation; do not substitute a generic cosine similarity.",
+      "readiness": "Benchmark adapter provided; frozen assets, documented upstream components and scientific environment required",
+      "guide": "docs/methods.md",
+      "utility_worker": "python scripts/evaluate.py utility",
+      "detector_scope": "benchmark_adapter"
+    },
+    {
+      "key": "zeroprint",
+      "name": "ZeroPrint",
+      "family": "passive",
+      "detector_worker": "python scripts/evaluate.py zeroprint",
+      "detector_semantics": "Frozen perturbations, queries and reference fingerprint; preserve correlation rescaling and strict threshold.",
+      "cross_lineage": "Use the audited query/representation protocol with clean Qwen controls.",
+      "readiness": "Implementation provided; frozen assets and scientific environment required",
+      "guide": "docs/methods.md",
+      "utility_worker": "python scripts/evaluate.py utility",
+      "detector_scope": "native_implementation"
+    }
+  ],
+  "main_3b": {
+    "independent_fresh_student": true,
+    "records": 20000,
+    "epochs": 3,
+    "effective_batch_size": 8,
+    "learning_rate": 1e-05,
+    "precision": "BF16",
+    "optimizer_steps": 7500,
+    "training_seed": 42,
+    "result_interpretation": "final checkpoint of one seed-42 training run"
+  },
+  "transformation": {
+    "seed": 42,
+    "temperature": 0.7,
+    "top_p": 0.9
+  },
+  "trajectory": {
+    "runs_per_method": 1,
+    "checkpoints": 11,
+    "steps": [
+      0,
+      25,
+      50,
+      100,
+      250,
+      500,
+      1000,
+      2000,
+      4000,
+      6000,
+      7500
+    ],
+    "interpretation": "one continuous seed-42 run per active method; checkpoints are not independent runs"
+  },
+  "7b": {
+    "seed": 42,
+    "methods": [
+      "PN-FP",
+      "AWM"
+    ],
+    "scope": "Representative robustness extension; not a controlled scaling ablation"
+  }
+}

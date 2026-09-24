@@ -1,0 +1,14 @@
+WMMD-Bench third-party attribution
+
+PN-FP: scalable-fingerprinting-of-llms, Copyright (c) 2025 Anshul Nasery (MIT).
+iSeal: Copyright (c) 2025 kitaharasetusna (MIT).
+ZeroPrint: Copyright (c) 2025 Shuo Shao (MIT).
+SCW: Copyright (c) 2025 Thibaud Gloaguen and contributors;
+Responsible AI SOURCE CODE License v1.1, including Exhibit A.
+REEF: AI45Lab/REEF; Jie Zhang, Dongrui Liu, Chen Qian, Linfeng Zhang,
+Yong Liu, Yu Qiao and Jing Shao; pinned README declares Apache-2.0.
+No upstream NOTICE file was found in the inspected pinned REEF tree.
+
+Method integrations are modified for this benchmark; see docs/licenses.md and
+docs/methods.md. Original applicable license texts are in LICENSES/.
+Attribution is not an endorsement. Unknown-license upstream function bodies are not bundled; benchmark-authored adapters call separately supplied official code.

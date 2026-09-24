@@ -1,0 +1,242 @@
+{
+  "pnfp": {
+    "parent_origin": "RECONSTRUCTED_NOT_ORIGINAL_BA",
+    "alignment": {
+      "parent_instruction_mismatches": 0,
+      "parent_input_mismatches": 0,
+      "parent_answer_mismatches": 0,
+      "student_instruction_mismatches": 0,
+      "student_input_mismatches": 0,
+      "student_answer_mismatches": 0
+    },
+    "paired_unique_ids": 20000,
+    "literal_identical_answers": 5350,
+    "literal_changed_answers": 14650,
+    "processing_modes": {
+      "qwen_paraphrased": 14650,
+      "atomic_identity_preserved": 3681,
+      "qwen_identity_output": 1646,
+      "pipeline_identity_fallback": 23
+    },
+    "datasets": {
+      "parent": {
+        "records": 20000,
+        "unique_questions": 20000,
+        "unique_answers": 13164,
+        "untruncated_input_tokens": 1726977,
+        "retained_input_tokens": 1726977,
+        "supervised_label_tokens": 414693,
+        "truncated_records": 0,
+        "zero_supervised_records": 0,
+        "key_substring_in_question": 0,
+        "response_substring_in_answer": 0,
+        "response_substring_in_retained_label_text": 0,
+        "three_pass_supervised_label_token_replay": 1244079
+      },
+      "bb_student": {
+        "records": 20000,
+        "unique_questions": 20000,
+        "unique_answers": 13003,
+        "untruncated_input_tokens": 1799647,
+        "retained_input_tokens": 1799647,
+        "supervised_label_tokens": 487363,
+        "truncated_records": 0,
+        "zero_supervised_records": 0,
+        "key_substring_in_question": 0,
+        "response_substring_in_answer": 0,
+        "response_substring_in_retained_label_text": 0,
+        "three_pass_supervised_label_token_replay": 1462089
+      }
+    }
+  },
+  "evertracer": {
+    "parent_origin": "ORIGINAL_BA",
+    "alignment": {
+      "parent_instruction_mismatches": 0,
+      "parent_input_mismatches": 0,
+      "parent_answer_mismatches": 0,
+      "student_instruction_mismatches": 0,
+      "student_input_mismatches": 0,
+      "student_answer_mismatches": 0
+    },
+    "paired_unique_ids": 20000,
+    "literal_identical_answers": 7901,
+    "literal_changed_answers": 12099,
+    "processing_modes": {
+      "qwen_paraphrased": 12099,
+      "atomic_identity_preserved": 4864,
+      "qwen_identity_output": 2959,
+      "pipeline_identity_fallback": 78
+    },
+    "datasets": {
+      "parent": {
+        "records": 20000,
+        "unique_questions": 20000,
+        "unique_answers": 11078,
+        "untruncated_input_tokens": 1624178,
+        "retained_input_tokens": 1624178,
+        "supervised_label_tokens": 251646,
+        "truncated_records": 0,
+        "zero_supervised_records": 0,
+        "frozen_member_or_nonmember_document_exact_field": 0,
+        "three_pass_supervised_label_token_replay": 754938
+      },
+      "bb_student": {
+        "records": 20000,
+        "unique_questions": 20000,
+        "unique_answers": 10903,
+        "untruncated_input_tokens": 1735824,
+        "retained_input_tokens": 1735824,
+        "supervised_label_tokens": 363292,
+        "truncated_records": 0,
+        "zero_supervised_records": 0,
+        "frozen_member_or_nonmember_document_exact_field": 0,
+        "three_pass_supervised_label_token_replay": 1089876
+      }
+    }
+  },
+  "ctcc": {
+    "parent_origin": "ORIGINAL_BA",
+    "alignment": {
+      "parent_instruction_mismatches": 0,
+      "parent_input_mismatches": 0,
+      "parent_answer_mismatches": 0,
+      "student_instruction_mismatches": 0,
+      "student_input_mismatches": 0,
+      "student_answer_mismatches": 0
+    },
+    "paired_unique_ids": 20000,
+    "literal_identical_answers": 5496,
+    "literal_changed_answers": 14504,
+    "processing_modes": {
+      "qwen_paraphrased": 14504,
+      "pipeline_identity_fallback": 236,
+      "atomic_identity_preserved": 2956,
+      "qwen_identity_output": 2304
+    },
+    "datasets": {
+      "parent": {
+        "records": 20000,
+        "unique_questions": 20000,
+        "unique_answers": 14000,
+        "untruncated_input_tokens": 1568251,
+        "retained_input_tokens": 1568251,
+        "supervised_label_tokens": 334104,
+        "truncated_records": 0,
+        "zero_supervised_records": 0,
+        "exact_frozen_trigger_question": 0,
+        "target_substring_in_answer": 0,
+        "target_exact_normalized_answer": 0,
+        "target_substring_in_retained_label_text": 0,
+        "three_pass_supervised_label_token_replay": 1002312
+      },
+      "bb_student": {
+        "records": 20000,
+        "unique_questions": 20000,
+        "unique_answers": 13813,
+        "untruncated_input_tokens": 1665957,
+        "retained_input_tokens": 1665957,
+        "supervised_label_tokens": 431810,
+        "truncated_records": 0,
+        "zero_supervised_records": 0,
+        "exact_frozen_trigger_question": 0,
+        "target_substring_in_answer": 0,
+        "target_exact_normalized_answer": 0,
+        "target_substring_in_retained_label_text": 0,
+        "three_pass_supervised_label_token_replay": 1295430
+      }
+    }
+  },
+  "iseal": {
+    "parent_origin": "ORIGINAL_BA",
+    "alignment": {
+      "parent_instruction_mismatches": 0,
+      "parent_input_mismatches": 0,
+      "parent_answer_mismatches": 0,
+      "student_instruction_mismatches": 0,
+      "student_input_mismatches": 0,
+      "student_answer_mismatches": 0
+    },
+    "paired_unique_ids": 20000,
+    "literal_identical_answers": 7423,
+    "literal_changed_answers": 12577,
+    "processing_modes": {
+      "qwen_identity_output": 2601,
+      "atomic_identity_preserved": 4791,
+      "qwen_paraphrased": 12577,
+      "pipeline_identity_fallback": 31
+    },
+    "datasets": {
+      "parent": {
+        "records": 20000,
+        "unique_questions": 20000,
+        "unique_answers": 12453,
+        "untruncated_input_tokens": 1374552,
+        "retained_input_tokens": 1374552,
+        "supervised_label_tokens": 233202,
+        "truncated_records": 0,
+        "zero_supervised_records": 0,
+        "registered_plaintext_exact_whole_field": 0,
+        "three_pass_supervised_label_token_replay": 699606
+      },
+      "bb_student": {
+        "records": 20000,
+        "unique_questions": 20000,
+        "unique_answers": 12282,
+        "untruncated_input_tokens": 1447189,
+        "retained_input_tokens": 1447189,
+        "supervised_label_tokens": 305839,
+        "truncated_records": 0,
+        "zero_supervised_records": 0,
+        "registered_plaintext_exact_whole_field": 0,
+        "three_pass_supervised_label_token_replay": 917517
+      }
+    }
+  },
+  "scw": {
+    "parent_origin": "RECONSTRUCTED_NOT_ORIGINAL_BA",
+    "alignment": {
+      "parent_instruction_mismatches": 0,
+      "parent_input_mismatches": 0,
+      "parent_answer_mismatches": 0,
+      "student_instruction_mismatches": 0,
+      "student_input_mismatches": 0,
+      "student_answer_mismatches": 0
+    },
+    "paired_unique_ids": 20000,
+    "literal_identical_answers": 7282,
+    "literal_changed_answers": 12718,
+    "processing_modes": {
+      "qwen_paraphrased": 12718,
+      "atomic_identity_preserved": 5066,
+      "qwen_identity_output": 2165,
+      "pipeline_identity_fallback": 51
+    },
+    "datasets": {
+      "parent": {
+        "records": 20000,
+        "unique_questions": 20000,
+        "unique_answers": 10584,
+        "untruncated_input_tokens": 1527368,
+        "retained_input_tokens": 1527368,
+        "supervised_label_tokens": 313586,
+        "truncated_records": 0,
+        "zero_supervised_records": 0,
+        "exact_frozen_french_eval_instruction": 0,
+        "three_pass_supervised_label_token_replay": 940758
+      },
+      "bb_student": {
+        "records": 20000,
+        "unique_questions": 20000,
+        "unique_answers": 10406,
+        "untruncated_input_tokens": 1619281,
+        "retained_input_tokens": 1619281,
+        "supervised_label_tokens": 405499,
+        "truncated_records": 0,
+        "zero_supervised_records": 0,
+        "exact_frozen_french_eval_instruction": 0,
+        "three_pass_supervised_label_token_replay": 1216497
+      }
+    }
+  }
+}

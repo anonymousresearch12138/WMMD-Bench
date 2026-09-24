@@ -1,0 +1,16 @@
+{
+  "thresholds": {
+    "SCW": 0.001,
+    "LLMPrint": 0.7150049776126003,
+    "REEF": 0.4546738923165847,
+    "HuRef": 4.119894027709961,
+    "AWM": 0.0017953364917795106,
+    "ZeroPrint": 0.6793505996465683
+  },
+  "denominators": {
+    "PN-FP": 1024,
+    "CTCC": 95,
+    "iSeal": 200
+  },
+  "iseal_bleu_threshold": 50
+}
